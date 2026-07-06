@@ -6,10 +6,10 @@ Personal AI assistant for your TradingView Desktop charts. Connects Claude Code 
 
 Maintained by [@Sb2z](https://github.com/Sb2z), on top of [tradesdontlie/tradingview-mcp](https://github.com/tradesdontlie/tradingview-mcp). What it adds:
 
-- **`tv analyze` / `tv_analyze`** — one-shot multi-timeframe structure report: per-timeframe trend (EMA20/50), RSI14, ATR14, position in the recent range, and a cross-timeframe bias. Metrics are computed from the bars themselves, independent of which studies are loaded on the chart. The original timeframe is restored afterwards.
-- **Telegram channel** — `tv notify`, a `tv_notify` MCP tool and `--notify` flags on `analyze` and `brief`: chart analysis and morning digests land on your phone. Configure via `TELEGRAM_BOT_TOKEN` / `TELEGRAM_CHAT_ID` or `~/.tvmcp/telegram.json`.
-- **`tv brief` + session log** — rules-driven watchlist scan (`rules.json`: watchlist, default timeframe, bias criteria) with per-day session files under `~/.tvmcp/sessions/`, for a repeatable morning routine. Start from [rules.example.json](rules.example.json).
-- **Windows fix** — the unit-test runner failed on Windows (`file://` URL used as a filesystem path); the full suite now runs cross-platform.
+- **`tv analyze` / `tv_analyze`** : one-shot multi-timeframe structure report: per-timeframe trend (EMA20/50), RSI14, ATR14, position in the recent range, and a cross-timeframe bias. Metrics are computed from the bars themselves, independent of which studies are loaded on the chart. The original timeframe is restored afterwards.
+- **Telegram channel** : `tv notify`, a `tv_notify` MCP tool and `--notify` flags on `analyze` and `brief`: chart analysis and morning digests land on your phone. Configure via `TELEGRAM_BOT_TOKEN` / `TELEGRAM_CHAT_ID` or `~/.tvmcp/telegram.json`.
+- **`tv brief` + session log** : rules-driven watchlist scan (`rules.json`: watchlist, default timeframe, bias criteria) with per-day session files under `~/.tvmcp/sessions/`, for a repeatable morning routine. Start from [rules.example.json](rules.example.json).
+- **Windows fix** : the unit-test runner failed on Windows (`file://` URL used as a filesystem path); the full suite now runs cross-platform.
 
 > [!WARNING]
 > **This tool is not affiliated with, endorsed by, or associated with TradingView Inc.** It interacts with your locally running TradingView Desktop application via Chrome DevTools Protocol. Review the [Disclaimer](#disclaimer) before use.

@@ -151,7 +151,7 @@ export function getSession({ date } = {}) {
   if (existsSync(yesterdayPath)) {
     return {
       success: true,
-      note: "No session for today — returning yesterday",
+      note: "No session for today, returning yesterday",
       ...JSON.parse(readFileSync(yesterdayPath, "utf8")),
     };
   }

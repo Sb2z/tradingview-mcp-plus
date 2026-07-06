@@ -2,7 +2,7 @@
  * Multi-timeframe chart analysis.
  * Drives the active chart through a list of timeframes, samples OHLCV on
  * each, computes classic structure metrics (EMA20/50, RSI14, ATR14, position
- * in the recent range) and returns one structured report — the raw material
+ * in the recent range) and returns one structured report, the raw material
  * an agent (or a human) needs to form a bias without clicking through
  * timeframes by hand.
  *
@@ -146,7 +146,7 @@ export async function analyze({ symbol, timeframes, bars: barCount = 200 } = {})
 
 /** Compact human-readable rendering, small enough for a phone notification. */
 export function formatReport(report) {
-  const lines = [`${report.symbol} — bias: ${report.alignment.bias} (${report.alignment.up}▲/${report.alignment.down}▼ of ${report.alignment.sampled} TFs)`];
+  const lines = [`${report.symbol}, bias: ${report.alignment.bias} (${report.alignment.up}▲/${report.alignment.down}▼ of ${report.alignment.sampled} TFs)`];
   for (const [tf, t] of Object.entries(report.timeframes)) {
     if (t.error) { lines.push(`${tf}: ${t.error}`); continue; }
     lines.push(

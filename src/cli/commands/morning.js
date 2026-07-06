@@ -4,7 +4,7 @@ import * as telegram from "../../core/telegram.js";
 
 register("brief", {
   description:
-    "Run your morning brief — scan watchlist, read indicators, apply your rules",
+    "Run your morning brief, scan watchlist, read indicators, apply your rules",
   options: {
     rules: {
       type: "string",
@@ -25,7 +25,7 @@ register("brief", {
           ? `${s.symbol}: ${s.error}`
           : `${s.symbol}: ${s.quote?.last_price ?? s.quote?.price ?? "?"}`,
       );
-      await telegram.send(`Morning brief — ${lines.length} symbols\n${lines.join("\n")}`);
+      await telegram.send(`Morning brief, ${lines.length} symbols\n${lines.join("\n")}`);
     }
     return brief;
   },
